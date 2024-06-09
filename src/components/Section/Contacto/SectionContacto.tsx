@@ -62,7 +62,6 @@ function SectionContacto() {
                     <div className="formulario">
                         <form id='form_contacto' onSubmit={handleSubmit(async data => { 
                             // llamado a la API
-                            console.log(JSON.stringify(data));
                             const res = await fetch('/api/Send', {
                                 method: 'POST',
                                 headers: {
@@ -70,6 +69,7 @@ function SectionContacto() {
                                 },
                                 body: JSON.stringify(data)
                             });
+                            console.log(res);
                             if (res.status === 200) {
                                 // mostrar mensaje de exito
                                 const successMessage = document.querySelector('.success-message') as HTMLElement;
