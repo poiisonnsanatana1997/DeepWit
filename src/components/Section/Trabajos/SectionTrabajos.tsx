@@ -10,10 +10,10 @@ function SectionTrabajos() {
         <>
             <SectionContainer id='Soluciones'>
                 <div className="container">
-                    <div className="container-info">
+                    <Slide cascade direction='up' className="container-info">
                         <h6>Nuestro Trabajo</h6>
                         <h2>Productos haciendo la diferencia</h2>
-                    </div>
+                    </Slide>
                     <div className="container-cards">
                         <JackInTheBox delay={200} triggerOnce>
                             <DirectionAwareHoverDemo

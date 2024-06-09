@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Acordeon from '@/components/Section/Ayuda/Acordeon'
+import { Bounce, Fade, Flip, Hinge, JackInTheBox, Roll, Rotate, Slide, Zoom } from "react-awesome-reveal";
 
 function SectionAyuda() {
     return (
@@ -8,12 +9,14 @@ function SectionAyuda() {
             <SectionContainer>
                 <div className="container">
                     <div className="informacion">
-                        <h2>Si necesitas ayuda estamos aquí para ti.</h2>
-                        <p>Brindamos servicios profesionales a clientes en un área particular de especialización. Contamos con un equipo de expertos en diversos campos que pueden ofrecer asesoramiento sobre un proyecto o problema.</p>
-                        <p>¿Aún tienes alguna pregunta?</p>
-                        <div className="enlace-contacto">
-                            <a href="#Contacto">Contáctanos</a>
-                        </div>
+                        <Slide cascade direction='left' triggerOnce>
+                            <h2>Si necesitas ayuda estamos aquí para ti.</h2>
+                            <p>Brindamos servicios profesionales a clientes en un área particular de especialización. Contamos con un equipo de expertos en diversos campos que pueden ofrecer asesoramiento sobre un proyecto o problema.</p>
+                            <p>¿Aún tienes alguna pregunta?</p>
+                            <div className="enlace-contacto">
+                                <a href="#Contacto">Contáctanos</a>
+                            </div>
+                        </Slide>
                     </div>
                     <div className="preguntas">
                         <Acordeon></Acordeon>

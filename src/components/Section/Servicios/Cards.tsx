@@ -20,42 +20,42 @@ function Cards() {
                             <div className="info-a1">
                                 <div className="info-a2 line">
                                     <div className="info-a3">
-                                        <h6>1. Autenticación de usuario</h6>
+                                        <h6>1. Registro y autenticación de usuario</h6>
                                     </div>
                                 </div>
                             </div>
                             <div className="info-a1">
                                 <div className="info-a2 line">
                                     <div className="info-a3">
-                                        <h6>2. Perfiles de usuario</h6>
+                                        <h6>2. Formularios Personalizados</h6>
                                     </div>
                                 </div>
                             </div>
                             <div className="info-a1">
                                 <div className="info-a2 line">
                                     <div className="info-a3">
-                                        <h6>3. Notificaciones automáticas</h6>
+                                        <h6>3. Tablas Dinámicas</h6>
                                     </div>
                                 </div>
                             </div>
                             <div className="info-a1">
                                 <div className="info-a2 line">
                                     <div className="info-a3">
-                                        <h6>4. Mensajería dentro de la aplicación</h6>
+                                        <h6>4. Gráficos e Indicadores</h6>
                                     </div>
                                 </div>
                             </div>
                             <div className="info-a1">
                                 <div className="info-a2 line">
                                     <div className="info-a3">
-                                        <h6>5. Servicios de geolocalización</h6>
+                                        <h6>5. Reportes</h6>
                                     </div>
                                 </div>
                             </div>
                             <div className="info-a1">
                                 <div className="info-a2 line">
                                     <div className="info-a3">
-                                        <h6>6. Redes sociales</h6>
+                                        <h6>6. Catálogo de Productos</h6>
                                     </div>
                                 </div>
                             </div>
@@ -72,42 +72,42 @@ function Cards() {
                             <div className="info-a1">
                                 <div className="info-a2 line">
                                     <div className="info-a3">
-                                        <h6>1. Autenticación de usuario</h6>
+                                        <h6>1. Registro y autenticación de usuario</h6>
                                     </div>
                                 </div>
                             </div>
                             <div className="info-a1">
                                 <div className="info-a2 line">
                                     <div className="info-a3">
-                                        <h6>2. Perfiles de usuario</h6>
+                                        <h6>2. Escaneo de Códigos de Barras y QR</h6>
                                     </div>
                                 </div>
                             </div>
                             <div className="info-a1">
                                 <div className="info-a2 line">
                                     <div className="info-a3">
-                                        <h6>3. Notificaciones automáticas</h6>
+                                        <h6>3. Seguimiento de Inventarios</h6>
                                     </div>
                                 </div>
                             </div>
                             <div className="info-a1">
                                 <div className="info-a2 line">
                                     <div className="info-a3">
-                                        <h6>4. Mensajería dentro de la aplicación</h6>
+                                        <h6>4. Confirmación de Entrega</h6>
                                     </div>
                                 </div>
                             </div>
                             <div className="info-a1">
                                 <div className="info-a2 line">
                                     <div className="info-a3">
-                                        <h6>5. Servicios de geolocalización</h6>
+                                        <h6>5. Seguimiento en Tiempo Real</h6>
                                     </div>
                                 </div>
                             </div>
                             <div className="info-a1">
                                 <div className="info-a2 line">
                                     <div className="info-a3">
-                                        <h6>6. Redes sociales</h6>
+                                        <h6>6. Notificaciones Push</h6>
                                     </div>
                                 </div>
                             </div>
@@ -124,42 +124,42 @@ function Cards() {
                             <div className="info-a1">
                                 <div className="info-a2 line">
                                     <div className="info-a3">
-                                        <h6>1. Integración de aplicaciones de terceros</h6>
+                                        <h6>1. Integraciones de Software</h6>
                                     </div>
                                 </div>
                             </div>
                             <div className="info-a1">
                                 <div className="info-a2 line">
                                     <div className="info-a3">
-                                        <h6>2. Soporte de API</h6>
+                                        <h6>2. Soporte y Desarrollo de API</h6>
                                     </div>
                                 </div>
                             </div>
                             <div className="info-a1">
                                 <div className="info-a2 line">
                                     <div className="info-a3">
-                                        <h6>3. Compatibilidad con CRM</h6>
+                                        <h6>3. Migraciones en la Nube</h6>
                                     </div>
                                 </div>
                             </div>
                             <div className="info-a1">
                                 <div className="info-a2 line">
                                     <div className="info-a3">
-                                        <h6>4. Integración de la pasarela de pago</h6>
+                                        <h6>4. Desarrollo de Integraciones Personalizadas</h6>
                                     </div>
                                 </div>
                             </div>
                             <div className="info-a1">
                                 <div className="info-a2 line">
                                     <div className="info-a3">
-                                        <h6>5. Sincronización del marketing por correo electrónico</h6>
+                                        <h6>5. Servicios de Monitorización y Análisis</h6>
                                     </div>
                                 </div>
                             </div>
                             <div className="info-a1">
                                 <div className="info-a2 line">
                                     <div className="info-a3">
-                                        <h6>6. Compatibilidad de medios</h6>
+                                        <h6>6. Servicios de Optimización de Rendimiento</h6>
                                     </div>
                                 </div>
                             </div>

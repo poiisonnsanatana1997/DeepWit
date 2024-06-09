@@ -1,10 +1,11 @@
-"use client"; 
+"use client";
 import styled from 'styled-components'
 import ButtonContacto from './ButtonContacto'
 import ButtonServicios from './ButtonServicios'
 import imagen_flecha from '@/assets/flecha.svg'
 import { useEffect } from 'react'
 import Image from 'next/image'
+import { Bounce, Fade, Flip, Hinge, JackInTheBox, Roll, Rotate, Slide, Zoom } from "react-awesome-reveal";
 
 function SectionPrincipal() {
 
@@ -26,18 +27,19 @@ function SectionPrincipal() {
         <>
             <SectionContainer id='Principal'>
                 <div className="container">
-                    <div className="container-info">
-                        <h1>Optimiza tus operaciones y haga crecer su negocio con <span>DeepWit.</span></h1>
-                        <p> En DeepWit, nos dedicamos a desarrollar soluciones tecnológicas personalizadas para     optimizar y automatizar tus procesos empresariales. ¿Quieres
-                            llevar tu empresa al siguiente nivel? ¡Déjanos ayudarte!</p>
-                    </div>
-                    <div className='container-button'>
-                        <ButtonContacto />
-                        <ButtonServicios />
-                    </div>
+                    <Slide direction='right' triggerOnce>
+                        <div className="container-info">
+                            <h1>Optimiza tus operaciones y haga crecer su negocio con <span>DeepWit.</span></h1>
+                            <p> En DeepWit, nos dedicamos a desarrollar soluciones tecnológicas personalizadas para     optimizar y automatizar tus procesos empresariales. ¿Quieres
+                                llevar tu empresa al siguiente nivel? ¡Déjanos ayudarte!</p>
+                        </div>
+                        <div className="container-button">
+                            <ButtonContacto />
+                            <ButtonServicios />
+                        </div>
+                    </Slide>
                     <div className="container-imagen">
                         <Image src={imagen_flecha} alt="" />
-
                     </div>
                 </div>
             </SectionContainer>
@@ -113,11 +115,9 @@ const SectionContainer = styled.section`
             display: none;
         }
     }
-
     .container-button{
-        
         @media (max-width: 880px){
             display: flex;
         }
-    }
+    }        
 `

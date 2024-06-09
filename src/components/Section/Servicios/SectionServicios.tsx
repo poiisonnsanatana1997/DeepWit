@@ -9,10 +9,8 @@ function SectionServicios() {
             <SectionContainer id='Servicios'>
                 <div className="container">
                     <div className="container-info">
-                        <Fade delay={25} direction="up" triggerOnce>
+                        <Fade cascade direction="up" triggerOnce>
                             <h6>Caracteristicas pricipales</h6>
-                        </Fade>
-                        <Fade delay={50} direction="up" triggerOnce>
                             <h2>Descubriendo nuestros diversos servicios</h2>
                         </Fade>
                     </div>

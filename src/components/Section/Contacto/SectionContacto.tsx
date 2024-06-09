@@ -11,6 +11,8 @@ import Image from 'next/image'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { userSchema } from '@/validations/userSchema'
+import { Bounce, Fade, Flip, Hinge, JackInTheBox, Roll, Rotate, Slide, Zoom } from "react-awesome-reveal";
+
 
 type FormValues = {
     nombre: string;
@@ -42,25 +44,28 @@ function SectionContacto() {
             <SectionContainer id='Contacto'>
                 <div className="container">
                     <div className="informacion">
-                        <div className="principal">
-                            <h2>¿Tienes alguna pregunta?</h2>
-                            <p>Si tienes alguna duda o necesitas información adicional, no dudes en contactarnos.</p>
-                        </div>
-                        <div className="direccion">
-                            <p><FontAwesomeIcon icon={faLocationDot} className='location' /><span>Av. Insurgentes Sur 1234, Col. Del Valle, CDMX, México</span></p>
-                        </div>
-                        <div className="telefono">
-                            <p><FontAwesomeIcon icon={faPhone} className='phone' />+52 55 1234 5678</p>
-                        </div>
-                        <div className="correo">
-                            <p><FontAwesomeIcon icon={faEnvelope} className='email' />info@deepwit.com</p>
-                        </div>
+                        <Slide cascade direction='left' triggerOnce>
+                            <div className="principal">
+                                <h2>¿Tienes alguna pregunta?</h2>
+                                <p>Si tienes alguna duda o necesitas información adicional, no dudes en contactarnos.</p>
+                            </div>
+                            <div className="direccion">
+                                <p><FontAwesomeIcon icon={faLocationDot} className='location' /><span>Av. Insurgentes Sur 1234, Col. Del Valle, CDMX, México</span></p>
+                            </div>
+                            <div className="telefono">
+                                <p><FontAwesomeIcon icon={faPhone} className='phone' />+52 55 1234 5678</p>
+                            </div>
+                            <div className="correo">
+                                <p><FontAwesomeIcon icon={faEnvelope} className='email' />info@deepwit.com</p>
+                            </div>
+                        </Slide>
                         <div className="container-imagen-naranja">
                             <Image src={imagen_naranja} alt="" />
                         </div>
+
                     </div>
                     <div className="formulario">
-                        <form id='form_contacto' onSubmit={handleSubmit(async data => { 
+                        <form id='form_contacto' onSubmit={handleSubmit(async data => {
                             // llamado a la API
                             const res = await fetch('/api/Send', {
                                 method: 'POST',
@@ -80,7 +85,7 @@ function SectionContacto() {
                                 // limpiar formulario
                                 const form = document.getElementById('form_contacto') as HTMLFormElement;
                                 form.reset();
-                            }else{
+                            } else {
                                 // mostrar mensaje de error
                                 const errorMessage = document.querySelector('.error-message') as HTMLElement;
                                 errorMessage.style.display = 'block';
@@ -91,7 +96,7 @@ function SectionContacto() {
                                 const form = document.getElementById('form_contacto') as HTMLFormElement;
                                 form.reset();
                             }
-                         })}>
+                        })}>
                             <div className="form-input">
                                 <input type="text" id='nombre' placeholder="¿Cómo te llamas?"
                                     {...register('nombre')}

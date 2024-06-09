@@ -1,7 +1,6 @@
 import { EmailTemplate } from '@/components/Correo/email-template';
 import { Resend } from 'resend';
 import { json } from 'stream/consumers';
-import { NextResponse } from 'next/server';
 
 const resend = new Resend("re_R4YaNHqp_BSTwFX1YRnWNRMy7oX5CoNc8");
 
@@ -18,11 +17,11 @@ export async function POST(request: Request) {
             text: text.telefono
         });
         if (error) {
-            return NextResponse.json({ error }, { status: 500 });
+            return Response.json({ error }, { status: 500 });
         }
 
-        return NextResponse.json({ data }, { status: 200 });
+        return Response.json({ data }, { status: 200 });
     } catch (error) {
-        return NextResponse.json({ error }, { status: 500 });
+        return Response.json({ error }, { status: 500 });
     }
 }
