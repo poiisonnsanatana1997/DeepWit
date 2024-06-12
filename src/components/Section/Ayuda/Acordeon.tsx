@@ -10,7 +10,7 @@ import { Bounce, Fade, Flip, Hinge, JackInTheBox, Roll, Rotate, Slide, Zoom } fr
 export default function AccordionDemo() {
   return (
     <Accordion type="single" collapsible className="w-full">
-      <Slide cascade direction='up' triggerOnce>
+      <Slide cascade direction='up' duration={400} triggerOnce>
         <AccordionItem value="item-1">
           <AccordionTrigger>¿Cuánto tiempo tarda un proyecto?</AccordionTrigger>
           <AccordionContent>

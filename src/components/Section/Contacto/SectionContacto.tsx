@@ -44,7 +44,7 @@ function SectionContacto() {
             <SectionContainer id='Contacto'>
                 <div className="container">
                     <div className="informacion">
-                        <Slide cascade direction='left' triggerOnce>
+                        <Slide cascade direction='left' duration={400} triggerOnce>
                             <div className="principal">
                                 <h2>¿Tienes alguna pregunta?</h2>
                                 <p>Si tienes alguna duda o necesitas información adicional, no dudes en contactarnos.</p>

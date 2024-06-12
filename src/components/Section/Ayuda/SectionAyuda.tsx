@@ -9,7 +9,7 @@ function SectionAyuda() {
             <SectionContainer>
                 <div className="container">
                     <div className="informacion">
-                        <Slide cascade direction='left' triggerOnce>
+                        <Slide cascade direction='left' duration={400} triggerOnce>
                             <h2>Si necesitas ayuda estamos aquí para ti.</h2>
                             <p>Brindamos servicios profesionales a clientes en un área particular de especialización. Contamos con un equipo de expertos en diversos campos que pueden ofrecer asesoramiento sobre un proyecto o problema.</p>
                             <p>¿Aún tienes alguna pregunta?</p>
