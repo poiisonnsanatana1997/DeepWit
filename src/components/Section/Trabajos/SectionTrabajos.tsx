@@ -10,7 +10,7 @@ function SectionTrabajos() {
         <>
             <SectionContainer id='Soluciones'>
                 <div className="container">
-                    <Slide cascade direction='up' className="container-info">
+                    <Slide cascade direction='up' className="container-info" triggerOnce>
                         <h6>Nuestro Trabajo</h6>
                         <h2>Productos haciendo la diferencia</h2>
                     </Slide>
