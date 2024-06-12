@@ -119,5 +119,8 @@ const SectionContainer = styled.section`
         @media (max-width: 880px){
             display: flex;
         }
-    }        
+    } 
+    @media (max-width: 768px){
+       padding: 100px 0;
+    }       
 `
