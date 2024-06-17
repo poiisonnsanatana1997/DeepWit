@@ -116,8 +116,12 @@ const SectionContainer = styled.section`
         }
     }
     .container-button{
-        @media (max-width: 880px){
-            display: flex;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 20px;
+        @media (max-width: 1070px){
+            gap: 10px;
         }
     } 
     @media (max-width: 768px){

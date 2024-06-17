@@ -14,13 +14,6 @@ function ButtonContacto(props: ButtonContactoProps) {
     </>
   );
 }
-// function ButtonContacto() {
-//   return (
-//     <>
-//       <ButtonContainer>Enviar mensaje</ButtonContainer>
-//     </>
-//   )
-// }
 
 export default ButtonContacto
 

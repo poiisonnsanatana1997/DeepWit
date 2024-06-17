@@ -95,6 +95,7 @@ const SectionContainer = styled.section`
             grid-template-columns: repeat(2, 1fr);
             gap: 50px;
             margin-bottom: 124px;
+            align-items: center;
             .imagen{
                 display: flex;
                 justify-content: center;

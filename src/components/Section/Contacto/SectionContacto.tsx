@@ -1,17 +1,17 @@
 "use client";
 
-import React from 'react'
+import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope, faPhone, faLocationDot } from '@fortawesome/free-solid-svg-icons'
 import styled from 'styled-components'
-import ButtonEnviar from './ButtonEnviar'
 import imagen_naranja from '@/assets/flecha-naranja.svg'
 import { useEffect } from 'react'
 import Image from 'next/image'
-import { useForm } from 'react-hook-form'
+import { useForm, SubmitHandler } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { userSchema } from '@/validations/userSchema'
 import { Bounce, Fade, Flip, Hinge, JackInTheBox, Roll, Rotate, Slide, Zoom } from "react-awesome-reveal";
+import { LoadingButton } from './ButtonLoading'
 
 
 type FormValues = {
@@ -19,11 +19,13 @@ type FormValues = {
     correo: string;
     empresa: string;
     telefono: number;
+    mensaje: string;
 }
 
 function SectionContacto() {
 
-    const { register, handleSubmit, formState: { errors } } = useForm<FormValues>({ resolver: zodResolver(userSchema) });
+    const { register, handleSubmit, reset , formState: { errors } } = useForm<FormValues>({ resolver: zodResolver(userSchema) });
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         const containerImagen = document.querySelector('.container-imagen-naranja') as HTMLElement;
@@ -38,6 +40,41 @@ function SectionContacto() {
             setInterval(floatingEffect, 1000);
         }
     }, []);
+
+    const onSubmit: SubmitHandler<FormValues> = async (data: FormValues) => {
+        setLoading(true); // Activar el estado de carga
+        // llamado a la API
+        const res = await fetch('/api/Send', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        });
+        if (res.status === 200) {
+            // mostrar mensaje de exito
+            const successMessage = document.querySelector('.success-message') as HTMLElement;
+            successMessage.style.display = 'block';
+
+            setTimeout(() => {
+                successMessage.style.display = 'none';
+              }, 5000);
+
+            reset();
+            setLoading(false); // Activar el estado de carga
+        } else {
+            // mostrar mensaje de error
+            const errorMessage = document.querySelector('.error-message') as HTMLElement;
+            errorMessage.style.display = 'block';
+
+            setTimeout(() => {
+                errorMessage.style.display = 'none';
+              }, 5000);
+
+            reset();
+            setLoading(false); // Activar el estado de carga
+        }
+    };
 
     return (
         <>
@@ -65,38 +102,7 @@ function SectionContacto() {
 
                     </div>
                     <div className="formulario">
-                        <form id='form_contacto' onSubmit={handleSubmit(async data => {
-                            // llamado a la API
-                            const res = await fetch('/api/Send', {
-                                method: 'POST',
-                                headers: {
-                                    'Content-Type': 'application/json'
-                                },
-                                body: JSON.stringify(data)
-                            });
-                            console.log(res);
-                            if (res.status === 200) {
-                                // mostrar mensaje de exito
-                                const successMessage = document.querySelector('.success-message') as HTMLElement;
-                                successMessage.style.display = 'block';
-                                // ocultar boton de enviar
-                                const buttonEnviar = document.querySelector('.button-enviar') as HTMLElement;
-                                buttonEnviar.style.display = 'none';
-                                // limpiar formulario
-                                const form = document.getElementById('form_contacto') as HTMLFormElement;
-                                form.reset();
-                            } else {
-                                // mostrar mensaje de error
-                                const errorMessage = document.querySelector('.error-message') as HTMLElement;
-                                errorMessage.style.display = 'block';
-                                // ocultar boton de enviar
-                                const buttonEnviar = document.querySelector('.button-enviar') as HTMLElement;
-                                buttonEnviar.style.display = 'none';
-                                // limpiar formulario
-                                const form = document.getElementById('form_contacto') as HTMLFormElement;
-                                form.reset();
-                            }
-                        })}>
+                        <form id='form_contacto' onSubmit={handleSubmit(onSubmit)}>
                             <div className="form-input">
                                 <input type="text" id='nombre' placeholder="¿Cómo te llamas?"
                                     {...register('nombre')}
@@ -122,7 +128,9 @@ function SectionContacto() {
                                 {errors.telefono?.message && <SpanError>{errors.telefono.message}</SpanError>}
                             </div>
                             <textarea name="" id="" cols={30} rows={10} placeholder="Escribe tu mensaje..."></textarea>
-                            <ButtonContainer className='button-enviar' type='submit'>Enviar mensaje</ButtonContainer>
+
+                            <LoadingButton loading={loading}> Enviar mensaje </LoadingButton>
+
                         </form>
                         <div className="success-message w-form-done">
                             <div>
@@ -277,7 +285,6 @@ const SectionContainer = styled.section`
         .informacion{
             display: flex;
             flex-direction: column;
-            padding: 0 20px;
             position: relative;
             .principal{
                 h2{
